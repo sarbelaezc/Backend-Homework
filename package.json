@@ -20,5 +20,6 @@
   "bugs": {
     "url": "https://github.com/sarbelaezc/Backend-Homework/issues"
   },
-  "homepage": "https://github.com/sarbelaezc/Backend-Homework#readme"
+  "homepage": "https://github.com/sarbelaezc/Backend-Homework#readme",
+  "lint": "tslint --project tsconfig.json src/**/*.ts"
 }
