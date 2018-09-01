@@ -4,7 +4,9 @@
   "description": "This its the homework for the backend session in PRAXIS",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "tslint --project tsconfig.json src/**/*.ts",
+    "start": "nodemon"
   },
   "repository": {
     "type": "git",
@@ -21,7 +23,6 @@
     "url": "https://github.com/sarbelaezc/Backend-Homework/issues"
   },
   "homepage": "https://github.com/sarbelaezc/Backend-Homework#readme",
-  "lint": "tslint --project tsconfig.json src/**/*.ts",
   "dependencies": {
     "@nestjs/common": "^5.3.0",
     "@nestjs/core": "^5.3.0",
