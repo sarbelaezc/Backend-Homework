@@ -1,0 +1,24 @@
+{
+  "name": "backend-homework",
+  "version": "1.0.0",
+  "description": "This its the homework for the backend session in PRAXIS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sarbelaezc/Backend-Homework.git"
+  },
+  "keywords": [
+    "NestJS",
+    "Homework",
+    "Backend"
+  ],
+  "author": "Santiago Arbeláez - sarbelaezc@unal.edu.co (sarbelaezc)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sarbelaezc/Backend-Homework/issues"
+  },
+  "homepage": "https://github.com/sarbelaezc/Backend-Homework#readme"
+}
