@@ -1,4 +1,6 @@
 import { Module } from '@nestjs/common';
+import { AppController } from './controllers/app.controller';
+import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
   controllers :[
