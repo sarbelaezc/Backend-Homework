@@ -9,11 +9,26 @@ export class UsersController {
 
     @Post()
     async create(@Body() createUserDto: CreateUserDto) {
-        this.usersService.create(createUserDto);
+      this.usersService.create(createUserDto);
     }
 
     @Get()
     async findAll(): Promise<UserInterface[]> {
-        return this.usersService.findAll();
+      return this.usersService.findAll();
+    }
+
+    @Get(':username')
+    async findOne(@Param('username') username: string): Promise<User> {
+      return this.usersService.findOne(username);
+    }
+
+    @Patch(':username')
+    async update(@Param('username') username: string){
+      this.usersService.update(username, updateUser);
+    }
+
+    @Delete(':username')
+    async delete(@Param('username') username: string){
+      this.usersService.delete(username);
     }
 }
