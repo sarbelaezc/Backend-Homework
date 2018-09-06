@@ -1,4 +1,5 @@
 import * as mongoose from 'mongoose';
+import { NoteSchema } from '../notes/notes.schema';
 
 export const UserSchema = new mongoose.Schema({
     username: {
@@ -9,9 +10,6 @@ export const UserSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
-    }//,
-    // notes: {
-    //     type: [NoteSchema],
-    //     required: false,
-    // }
+    }
+    notes: [NoteSchema],
 });
