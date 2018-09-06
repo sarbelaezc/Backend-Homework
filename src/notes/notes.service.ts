@@ -18,14 +18,11 @@ export class NotesService{
     return await this.noteModel.find().exec();
   }
 
-  async update(id, newText: string){
-    this.updateDate(id);
-    return await this.note.findByIdAndUpdate(id,{text:newText});
+  async update(id, updatedNote): Promise<Note>{
+    updatedNote.updatedDate = Date.now;
+    return await this.note.findByIdAndUpdate(id, updatedNote).exec();
   }
-  async delete(id){
-    return await this.note.findByIdAndDelete(id);
-  }
-  async updateDate(id){
-    this.note.findByIdAndUpdate(id,{updatedDate:Date.now});
+  async delete(id):Promise<Note>{
+    return await this.note.findByIdAndDelete(id).exec();
   }
 }
