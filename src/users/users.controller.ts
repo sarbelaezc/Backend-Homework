@@ -18,16 +18,16 @@ export class UsersController {
     }
 
     @Get(':username')
-    async findOne(@Param('username') username: string): Promise<User> {
+    async findOne(@Param('username') username: string): Promise<UserInterface> {
       return this.usersService.findOne(username);
     }
 
-    @Patch(':username')
-    async update(@Param('username') username: string){
+    @Post()
+    async update(@Param('username') username: string, @Body()updateUser){
       this.usersService.update(username, updateUser);
     }
 
-    @Delete(':username')
+    @Post()
     async delete(@Param('username') username: string){
       this.usersService.delete(username);
     }

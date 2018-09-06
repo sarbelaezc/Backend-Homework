@@ -1,26 +1,27 @@
 import { Controller, Get, Post, Body, Param } from '@nestjs/common';
-import { CreateNotesDto } from './dto/create-note.dto';
+import { CreateNoteDto } from './dto/create-note.dto';
 import { NotesService} from './notes.service';
-import { Note as NoteInterface } from './interfaces/note.interface.ts';
+import { Note as NoteInterface } from './interfaces/note.interface';
 
 @Controller('notes')
 export class NotesController{
   constructor(private readonly notesService: NotesService){
+
     @Post()
     async create(@Body() createNoteDto: CreateNoteDto ){
-      this.notesService.create(createNoteDto);
+      this.NotesService.create(createNoteDto);
     }
     @Get()
     async findAll(): Promise<NoteInterface[]>{
-      return this.notesService.findAll();
+      return this.NotesService.findAll();
     }
     @Post()
-    async update(id,@Body() text:string): Promise<NoteInterface>{
-      return this.notesService.update(id,text);
+    async update(@Param('id') id:number,@Body()text): Promise<NoteInterface>{
+      return this.NotesService.update(id,text);
     }
     @Post()
-    async delete(id){
-      this.notesService.delete(id);
+    async delete(@Param('id') id:number){
+      this.NotesService.delete(id);
     }
   }
 }
