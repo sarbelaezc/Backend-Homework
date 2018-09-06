@@ -45,5 +45,4 @@ describe ('NotesController', () =>{
       expect(await notesController.delete("")).toBe(result);
     });
   });
-
-})
+});
