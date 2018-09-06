@@ -1,27 +1,34 @@
 import { Controller, Get, Post, Body, Param } from '@nestjs/common';
 import { CreateNoteDto } from './dto/create-note.dto';
 import { NotesService} from './notes.service';
-import { Note as NoteInterface } from './interfaces/note.interface';
+import { Note as NoteInterface } from './interfaces/note.interface.ts';
+import { ApiResponse } from '@nestjs/swagger';
 
 @Controller('notes')
 export class NotesController{
   constructor(private readonly notesService: NotesService){
 
     @Post()
+    @ApiResponse({ status: 201, description: 'The note has been successfully created' })
     async create(@Body() createNoteDto: CreateNoteDto ){
-      this.NotesService.create(createNoteDto);
+      this.notesService.create(createNoteDto);
     }
+
     @Get()
     async findAll(): Promise<NoteInterface[]>{
-      return this.NotesService.findAll();
+      return this.notesService.findAll();
     }
+
     @Post()
-    async update(@Param('id') id:number,@Body()text): Promise<NoteInterface>{
-      return this.NotesService.update(id,text);
+    @ApiResponse({ status: 201, description: 'The note has been successfully updated' })
+    async update(id,@Body() text): Promise<NoteInterface>{
+      return this.notesService.update(id,text);
     }
+
     @Post()
+    @ApiResponse({ status: 201, description: 'The note has been successfully deleted' })
     async delete(@Param('id') id:number){
-      this.NotesService.delete(id);
+      this.notesService.delete(id);
     }
   }
 }
