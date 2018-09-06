@@ -6,7 +6,7 @@ import { Model } from 'mongoose';
 
 describe ('NotesController', () =>{
   let notesService: NotesService;
-  let NotesController: NotesController;
+  let notesController: NotesController;
 
   beforeEach(()=>{
     notesService = new NotesService(Model);
@@ -18,7 +18,7 @@ describe ('NotesController', () =>{
       var result;
       jest.spyOn(notesService,'create').mockImplementation(()=>result);
       const NoteT = new CreateNoteDto();
-      expect(await notesController.create(testNote)).toBe(result);
+      expect(await notesController.create(NoteT)).toBe(result);
     });
   });
 
