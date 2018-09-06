@@ -7,6 +7,7 @@ install:
   - npm install
 script:
   - npm install codecov -g
+  - nyc report --reporter=json > coverage/coverage.json
   # - npm test
 after_success:
   - codecov
