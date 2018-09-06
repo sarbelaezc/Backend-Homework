@@ -4,6 +4,9 @@
 
 A Backend Homework for PRAXIS
 
+## Heroku app
+Here's the link to the app in Heroku [Backend Homework](https://mysterious-tundra-68874.herokuapp.com)
+
 ## Installation
 
 ```bash
@@ -34,7 +37,7 @@ $ npm run test:e2e
 
 # test coverage
 $ npm run test:cov
-``` 
+```
 
 ## Authors
 
