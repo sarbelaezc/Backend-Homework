@@ -1,5 +1,5 @@
-import { CreateNoteDto } from '.../notes/dto/create-note.dto.ts';
 import { ApiModelProperty } from '@nestjs/swagger';
+import { CreateNoteDto } from '../../notes/dto/create-note.dto';
 
 export class CreateUserDto {
     @ApiModelProperty()

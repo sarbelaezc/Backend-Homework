@@ -2,7 +2,7 @@ import { Model } from 'mongoose';
 import { Component, Inject } from '@nestjs/common';
 
 import { Note } from './interfaces/note.interface';
-import {CreateNoteDto} from './dto/create-user.dto';
+import {CreateNoteDto} from './dto/create-note.dto';
 import {NOTE_MODEL_PROVIDER} from '../constants';
 
 @Component()

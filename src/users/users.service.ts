@@ -24,7 +24,7 @@ export class UsersService {
     }
 
     async update(username, updateUser): Promise<User> {
-      return await this.userModel.updateOne({username: username}, updateUser. function(err) {}).exec();
+      return await this.userModel.updateOne({username: username}, updateUser, function(err) {}).exec();
     }
 
     async delete(username): Promise<User> {

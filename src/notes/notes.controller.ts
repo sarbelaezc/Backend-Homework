@@ -1,5 +1,5 @@
 import { Controller, Get, Post, Body, Param } from '@nestjs/common';
-import { CreateNotesDto } from './dto/create-note.dto';
+import { CreateNoteDto } from './dto/create-note.dto';
 import { NotesService} from './notes.service';
 import { Note as NoteInterface } from './interfaces/note.interface.ts';
 import { ApiResponse } from '@nestjs/swagger';
@@ -21,13 +21,13 @@ export class NotesController{
 
     @Post()
     @ApiResponse({ status: 201, description: 'The note has been successfully updated' })
-    async update(id,@Body() text:string): Promise<NoteInterface>{
+    async update(id,@Body() text): Promise<NoteInterface>{
       return this.notesService.update(id,text);
     }
 
     @Post()
     @ApiResponse({ status: 201, description: 'The note has been successfully deleted' })
-    async delete(id){
+    async delete(@Param('id') id:number){
       this.notesService.delete(id);
     }
   }
