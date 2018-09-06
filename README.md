@@ -5,7 +5,7 @@
 A Backend Homework for PRAXIS
 
 ## Heroku app
-Here's the link to the app in Heroku [Backend Homework](https://mysterious-tundra-68874.herokuapp.com)
+Here's the link to the app in Heroku - [Backend Homework](https://mysterious-tundra-68874.herokuapp.com)
 
 ## Installation
 
