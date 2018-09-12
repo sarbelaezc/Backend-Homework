@@ -45,4 +45,12 @@ describe ('NotesController', () =>{
       expect(await notesController.delete("")).toBe(result);
     });
   });
+
+  describe('find', () => {
+    it('return all notes of sarbelaezc', async () => {
+      var result;
+      jest.spyOn(notesService, 'find').mockImplementation(() => result);
+      expect(await notesController.find("sarbelaezc")).toBe(result);
+    });
+  });
 });

@@ -4,7 +4,9 @@ export class CreateNoteDto {
   @ApiModelProperty()
   readonly text: string;
   @ApiModelProperty()
-  readonly createdDate: date;
+  createdDate: date;
   @ApiModelProperty()
-  readonly uptatedDate: date;
+  uptatedDate: date;
+  @ApiModelProperty()
+  readonly username: string;
 }

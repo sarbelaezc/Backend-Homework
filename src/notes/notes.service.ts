@@ -25,4 +25,7 @@ export class NotesService{
   async delete(id):Promise<Note>{
     return await this.note.findByIdAndDelete(id).exec();
   }
+  async find(username): Promise<Note[]> {
+    return await this.noteModel.find({username:username}, function(err,obj) {}).exec();
+  }
 }
