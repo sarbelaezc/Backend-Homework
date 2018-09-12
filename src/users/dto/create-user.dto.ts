@@ -6,6 +6,6 @@ export class CreateUserDto {
     readonly username: string;
     @ApiModelProperty()
     readonly name: string;
-    @ApiModelProperty()
-    readonly notes: [CreateNoteDto];
+    // @ApiModelProperty()
+    // readonly notes: [CreateNoteDto];
 }

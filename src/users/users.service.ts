@@ -7,8 +7,7 @@ import { USER_MODEL_PROVIDER } from '../constants';
 
 @Injectable()
 export class UsersService {
-    constructor(
-        @Inject(USER_MODEL_PROVIDER) private readonly userModel: Model<User>) { }
+    constructor(@Inject(USER_MODEL_PROVIDER) private readonly userModel: Model<User>) { }
 
     async create(createUserDto: CreateUserDto): Promise<User> {
         const createdUser = new this.userModel(createUserDto);

@@ -6,7 +6,7 @@ import { Model } from 'mongoose';
 
 describe ('NotesController', () =>{
   let notesService: NotesService;
-  let NotesController: NotesController;
+  let notesController: NotesController;
 
   beforeEach(()=>{
     notesService = new NotesService(Model);
@@ -43,6 +43,14 @@ describe ('NotesController', () =>{
       var result;
       jest.spyOn(notesService,'delete').mockImplementation(()=>result);
       expect(await notesController.delete("")).toBe(result);
+    });
+  });
+
+  describe('find', () => {
+    it('return all notes of sarbelaezc', async () => {
+      var result;
+      jest.spyOn(notesService, 'find').mockImplementation(() => result);
+      expect(await notesController.find("sarbelaezc")).toBe(result);
     });
   });
 });
