@@ -11,5 +11,5 @@ export const UserSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    notes: [NoteSchema],
+    // notes: [NoteSchema],
 });
